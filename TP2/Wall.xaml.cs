@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -23,6 +24,30 @@ namespace TP2
         {
             InitializeComponent();
             RadioButtonDate.IsChecked = true;
+            InitializeComboBox();
+            ComboBoxUser.SelectedIndex = 0;
+            UserChanged();
+        }
+        public void InitializeComboBox()
+        {
+            ComboBoxUser.Items.Clear();
+
+            foreach (var user in App.Current.Users)
+            {
+                ComboBoxUser.Items.Add(user.Value);
+            }
+        }
+        private void ComboBoxUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserChanged();
+        }
+        private void UserChanged()
+        {
+            StackPanelUser.Children.Clear();
+            var userSelect = (User)ComboBoxUser.SelectedItem;
+            var userCurrent = App.Current.Users.Where(x => x.Value == userSelect);
+            var userProfilControl = new UserProfilControl(userCurrent);
+            StackPanelUser.Children.Add(userProfilControl);
         }
     }
 }
