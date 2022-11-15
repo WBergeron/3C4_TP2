@@ -22,6 +22,7 @@ namespace TP2
         public Wall()
         {
             InitializeComponent();
+            RadioButtonDate.IsChecked = true;
         }
     }
 }
