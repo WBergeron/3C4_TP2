@@ -5,8 +5,163 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Marketplace" Height="450" Width="800">
-    <Grid>
+        Title="Marketplace" Height="700" Width="800">
+    <Grid Background="RoyalBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="550"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Header-->
+        <StackPanel Grid.Column="0" 
+                    Grid.ColumnSpan="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    >
+            <TextBlock FontSize="25"
+                       FontWeight="Bold">
+                MARKETPLACE
+            </TextBlock>
+        </StackPanel>
+        <!--Side Panel-->
+        <StackPanel Grid.Column="0"
+                    Grid.Row="1"
+                    Background="#333">
+            <StackPanel Margin="10"
+                        >
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Category
+                </TextBlock>
+                <ComboBox Margin="0 0 0 10">
+
+                </ComboBox>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Sort by
+                </TextBlock>
+                <RadioButton Margin="0 5 0 5"
+                          Foreground="White">
+                    Date (newest first)
+                </RadioButton>
+                <RadioButton Margin="0 5 0 5"
+                          Foreground="white">
+                    Price (lowest first)
+                </RadioButton>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Price
+                </TextBlock>
+                <StackPanel Height="25"
+                            VerticalAlignment="Center">
+                    <Grid Height="25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Background="Gray"
+                                 Grid.Column="0">
+                            
+                        </TextBox>
+                        <TextBlock Grid.Column="1"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            to
+                        </TextBlock>
+                        <TextBox Background="Gray"
+                                 Grid.Column="2">
+
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Maker
+                </TextBlock>
+                <ComboBox Margin="0 5 0 5">
+                    
+                </ComboBox>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Brand
+                </TextBlock>
+                <ComboBox Margin="0 5 0 5">
+
+                </ComboBox>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Year
+                </TextBlock>
+                <StackPanel Height="25"
+                            VerticalAlignment="Center">
+                    <Grid Height="25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Background="Gray"
+                                 Grid.Column="0">
+
+                        </TextBox>
+                        <TextBlock Grid.Column="1"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            to
+                        </TextBlock>
+                        <TextBox Background="Gray"
+                                 Grid.Column="2">
+
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+                <TextBlock Margin="0 5 0 5"
+                           Foreground="White">
+                 Mileage
+                </TextBlock>
+                <StackPanel Height="25"
+                            VerticalAlignment="Center">
+                    <Grid Height="25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Background="Gray"
+                                 Grid.Column="0">
+
+                        </TextBox>
+                        <TextBlock Grid.Column="1"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            to
+                        </TextBlock>
+                        <TextBox Background="Gray"
+                                 Grid.Column="2">
+
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+                <Button Height="40"
+                        Margin="0 20 0 20"
+                        Background="RoyalBlue">
+                    <WrapPanel>
+                        <TextBlock Foreground="White">
+                            Search
+                        </TextBlock>
+                    </WrapPanel>
+                </Button>
+            </StackPanel>
+            
+        </StackPanel>
+        <!--Main Content-->
         
     </Grid>
 </Window>
