@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -23,6 +24,13 @@ namespace TP2
         public UserProfilControl()
         {
             InitializeComponent();
+        }
+        public UserProfilControl(User user)
+        {
+            InitializeComponent();
+            ProfilImage.Source = user.Profil;
+            UserName.Text = user.Name;
+            UserLastName.Text = user.LastName;
         }
     }
 }
