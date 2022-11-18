@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="TP2.UserMarketControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TP2"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="200">
+    <StackPanel Background="#333">
+        <Image x:Name="OfferImage" MinHeight="190" MinWidth="190" Margin="5"/>
+        <WrapPanel Margin="5">
+            <TextBlock x:Name="Cost"
+                       Width="100"
+                       HorizontalAlignment="Left"
+                       >999999</TextBlock>
+            <TextBlock x:Name="Date"
+                       Width="90"
+                       HorizontalAlignment="Right"
+                       TextAlignment="Right"
+                       >01-01-2021</TextBlock>
+        </WrapPanel>
+        <TextBlock x:Name="NameOffer"
+                   Margin="5">Placeholder name</TextBlock>
+        <TextBlock x:Name="Descript"
+                   Margin="5">km</TextBlock>
+    </StackPanel>
+</UserControl>

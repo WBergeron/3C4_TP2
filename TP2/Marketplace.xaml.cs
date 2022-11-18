@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -22,6 +23,14 @@ namespace TP2
         public Marketplace()
         {
             InitializeComponent();
+
+            AffichageWrapPanelContent();
+        }
+
+        public void AffichageWrapPanelContent()
+        {
+            ContentOffer.Children.Clear();
+            
         }
     }
 }
