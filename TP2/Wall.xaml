@@ -30,8 +30,8 @@
                 <TextBlock Foreground="White">
                     Logged in as
                 </TextBlock>
-                <ComboBox x:Name="ComboBoxUser"></ComboBox>
-                <ListBox x:Name="ListBoxUser"></ListBox>
+                <ComboBox x:Name="ComboBoxUser" SelectionChanged="ComboBoxUser_SelectionChanged"></ComboBox>
+                <StackPanel x:Name="StackPanelUser"></StackPanel>
                 <TextBlock Foreground="White">
                     View posts of
                 </TextBlock>
