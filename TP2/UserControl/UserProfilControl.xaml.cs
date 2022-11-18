@@ -28,9 +28,13 @@ namespace TP2
         public UserProfilControl(User user)
         {
             InitializeComponent();
-            ProfilImage.Source = user.Profil;
-            UserName.Text = user.Name;
-            UserLastName.Text = user.LastName;
+            ProfilImage.ImageSource = user.Profil;
+            UserName.Text = user.Name + " " + user.LastName;
+
+            foreach (var friend in user.Friends)
+            {
+
+            }
         }
     }
 }

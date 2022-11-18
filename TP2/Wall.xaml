@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Wall" Height="450" Width="800">
+        Title="Wall" Height="800" Width="1000" MinHeight="800">
     <Grid Background="RoyalBlue">
         <Grid.RowDefinitions>
-            <RowDefinition Height=".8*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -27,20 +27,27 @@
         <StackPanel Grid.Row="1" 
                     Background="Black">
             <StackPanel Margin="10">
-                <TextBlock Foreground="White">
+                <TextBlock Margin="0, 0, 0, 10" 
+                           Foreground="White">
                     Logged in as
                 </TextBlock>
-                <ComboBox x:Name="ComboBoxUser" SelectionChanged="ComboBoxUser_SelectionChanged"></ComboBox>
-                <StackPanel x:Name="StackPanelUser"></StackPanel>
-                <TextBlock Foreground="White">
+                <ComboBox Margin="0, 0, 0, 5" 
+                          x:Name="ComboBoxUser" 
+                          SelectionChanged="ComboBoxUser_SelectionChanged"/>
+                <StackPanel x:Name="StackPanelUser"/>
+                <TextBlock Margin="0, 8, 0, 10" 
+                           Foreground="White">
                     View posts of
                 </TextBlock>
-                <ComboBox x:Name="ComboBoxPost"></ComboBox>
-                <TextBlock Foreground="White">
+                <ComboBox Margin="0, 0, 0, 10" 
+                          x:Name="ComboBoxPost"/>
+                <TextBlock Margin="0, 0, 0, 10"
+                           Foreground="White">
                     Sort by
                 </TextBlock>
                 <RadioButton x:Name="RadioButtonDate" 
-                             Foreground="White">
+                             Foreground="White"
+                             Margin="0, 0, 0, 8">
                     Date (newest first)
                 </RadioButton>
                 <RadioButton x:Name="RadioButtonPopularity" 

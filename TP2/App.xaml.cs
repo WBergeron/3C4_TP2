@@ -25,11 +25,19 @@ namespace TP2
 
         public Dictionary<int, User> Users = new()
         {
-            { 0, new User() { Id = 0, Name = "Tom", LastName = "Richards", Source="/Assets/Users/user1.jpg" } },
-            { 1, new User() { Id = 1, Name = "Elliot", LastName = "Hart", Source="/Assets/Users/user2.jpg"} },
-            { 2, new User() { Id = 2, Name = "Rachel", LastName = "Chapman", Source="/Assets/Users/user3.jpg"} },
-            { 3, new User() { Id = 3, Name = "Myriam", LastName = "Leblanc", Source="/Assets/Users/user4.jpg"} },
-            { 4, new User() { Id = 4, Name = "Paul", LastName = "Burnham", Source="/Assets/Users/user5.jpg"} },
+            { 0, new User() { Id = 0, Name = "Tom", LastName = "Richards", SourceProfil="/Assets/Users/user1.jpg" } },
+            { 1, new User() { Id = 1, Name = "Elliot", LastName = "Hart", SourceProfil="/Assets/Users/user2.jpg"} },
+            { 2, new User() { Id = 2, Name = "Rachel", LastName = "Chapman", SourceProfil="/Assets/Users/user3.jpg"} },
+            { 3, new User() { Id = 3, Name = "Myriam", LastName = "Leblanc", SourceProfil="/Assets/Users/user4.jpg"} },
+            { 4, new User() { Id = 4, Name = "Paul", LastName = "Burnham", SourceProfil="/Assets/Users/user5.jpg"} },
+        };
+        public Dictionary<int, Friend> Friends = new()
+        {
+            { 0, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[1] } },
+            { 1, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[2]} },
+            { 2, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[3]} },
+            { 3, new Friend() { UserSend = Current.Users[1], UserReceived = Current.Users[2]} },
+            { 4, new Friend() { UserSend = Current.Users[2], UserReceived = Current.Users[3]} },
         };
     }
 }
