@@ -7,4 +7,42 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Offers\Cars\car1.jpg" />
+    <None Remove="Assets\Offers\Cars\car10.jpg" />
+    <None Remove="Assets\Offers\Cars\car11.jpg" />
+    <None Remove="Assets\Offers\Cars\car12.jpg" />
+    <None Remove="Assets\Offers\Cars\car13.jpg" />
+    <None Remove="Assets\Offers\Cars\car14.jpg" />
+    <None Remove="Assets\Offers\Cars\car15.jpg" />
+    <None Remove="Assets\Offers\Cars\car16.jpg" />
+    <None Remove="Assets\Offers\Cars\car2.jpg" />
+    <None Remove="Assets\Offers\Cars\car3.jpg" />
+    <None Remove="Assets\Offers\Cars\car4.jpg" />
+    <None Remove="Assets\Offers\Cars\car5.jpg" />
+    <None Remove="Assets\Offers\Cars\car6.jpg" />
+    <None Remove="Assets\Offers\Cars\car7.jpg" />
+    <None Remove="Assets\Offers\Cars\car8.jpg" />
+    <None Remove="Assets\Offers\Cars\car9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Offers\Cars\car1.jpg" />
+    <Resource Include="Assets\Offers\Cars\car10.jpg" />
+    <Resource Include="Assets\Offers\Cars\car11.jpg" />
+    <Resource Include="Assets\Offers\Cars\car12.jpg" />
+    <Resource Include="Assets\Offers\Cars\car13.jpg" />
+    <Resource Include="Assets\Offers\Cars\car14.jpg" />
+    <Resource Include="Assets\Offers\Cars\car15.jpg" />
+    <Resource Include="Assets\Offers\Cars\car16.jpg" />
+    <Resource Include="Assets\Offers\Cars\car2.jpg" />
+    <Resource Include="Assets\Offers\Cars\car3.jpg" />
+    <Resource Include="Assets\Offers\Cars\car4.jpg" />
+    <Resource Include="Assets\Offers\Cars\car5.jpg" />
+    <Resource Include="Assets\Offers\Cars\car6.jpg" />
+    <Resource Include="Assets\Offers\Cars\car7.jpg" />
+    <Resource Include="Assets\Offers\Cars\car8.jpg" />
+    <Resource Include="Assets\Offers\Cars\car9.jpg" />
+  </ItemGroup>
+
 </Project>

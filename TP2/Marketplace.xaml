@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Marketplace" Height="700" Width="800">
+        Title="Marketplace" Height="700" Width="900">
     <Grid Background="RoyalBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="550"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -36,7 +36,8 @@
                            Foreground="White">
                  Category
                 </TextBlock>
-                <ComboBox Margin="0 0 0 10">
+                <ComboBox x:Name="Category"
+                          Margin="0 0 0 10">
 
                 </ComboBox>
                 <TextBlock Margin="0 5 0 5"
@@ -166,7 +167,7 @@
                    Grid.Column="1"
                    Background="#444"
                    >
-            <WrapPanel x:Name="ContentOffer" 
+            <WrapPanel x:Name="ContentOffer"
                        Margin="10">
             </WrapPanel>
         </ScrollViewer>

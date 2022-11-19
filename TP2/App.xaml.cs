@@ -34,7 +34,7 @@ namespace TP2
 
         public Dictionary<int, Offer> Offers = new()
         {
-            { 0, new Car() { Id = 0, Titre = "2014 Honda Accord", Description = "170k km", Price = 6000, 
+            { 0, new Car() { Id = 0, Titre = "2014 Honda Accord", Description = "170k km", Price = 6000,
                 DateDeMiseEnVente = new DateTime(2021, 11, 19), Source = "/Assets/Offers/Cars/car1.jpg"} },
             { 1, new Car() { Id = 1, Titre = "2015 Toyota Camry", Description = "200k km", Price = 5000,
                 DateDeMiseEnVente = new DateTime(2021, 11, 19), Source = "/Assets/Offers/Cars/car2.jpg"} },
@@ -52,6 +52,19 @@ namespace TP2
                 DateDeMiseEnVente = new DateTime(2021, 11, 25), Source = "/Assets/Offers/Cars/car8.jpg"} },
             { 8, new Car() { Id = 8, Titre = "2016 Nissan Infiniti", Description = "170k km", Price = 9000,
                 DateDeMiseEnVente = new DateTime(2021, 11, 27), Source = "/Assets/Offers/Cars/car9.jpg"} },
+            { 9, new Car() { Id = 9, Titre = "2018 Honda Accord", Description = "90k km", Price = 12000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 27), Source = "/Assets/Offers/Cars/car10.jpg"} },
+            { 10, new Car() { Id = 10, Titre = "2013 Toyota Yaris", Description = "210k km", Price = 5000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 29), Source = "/Assets/Offers/Cars/car11.jpg"} },
+            { 11, new Car() { Id = 11, Titre = "2000 Nissan Altima", Description = "320k km", Price = 2000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 29), Source = "/Assets/Offers/Cars/car12.jpg"} }
+        };
+
+        public List<string> Category = new()
+        {
+            "Appliances",
+            "Cars",
+            "Property Rentals"
         };
     }
 }

@@ -24,13 +24,35 @@ namespace TP2
         {
             InitializeComponent();
 
+            InitializeComboBox();
             AffichageWrapPanelContent();
         }
 
         public void AffichageWrapPanelContent()
         {
             ContentOffer.Children.Clear();
-            
+            switch (Category.SelectedIndex)
+            {
+                case 1:
+                    foreach (var item in App.Current.Offers.Values)
+                    {
+                        var offerUserControl = new UserMarketControl(item);
+                        ContentOffer.Children.Add(offerUserControl);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void InitializeComboBox()
+        {
+            Category.Items.Clear();
+            foreach (var item in App.Current.Category)
+            {
+                Category.Items.Add(item);
+            }
+            Category.SelectedIndex = 1;
         }
     }
 }
