@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Marketplace" Height="700" Width="900">
+        Title="Marketplace" 
+        MinHeight="700" MinWidth="550"
+        MaxHeight="700" Width="1000">
     <Grid Background="RoyalBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -29,7 +31,8 @@
         <!--Side Panel-->
         <StackPanel Grid.Column="0"
                     Grid.Row="1"
-                    Background="#333">
+                    Background="#333"
+                    >
             <StackPanel Margin="10"
                         >
                 <TextBlock Margin="0 5 0 5"
@@ -45,11 +48,14 @@
                  Sort by
                 </TextBlock>
                 <RadioButton Margin="0 5 0 5"
-                          Foreground="White">
+                          Foreground="White"
+                             IsChecked="True"
+                             x:Name="DateRadio">
                     Date (newest first)
                 </RadioButton>
                 <RadioButton Margin="0 5 0 5"
-                          Foreground="white">
+                          Foreground="white"
+                             x:Name="PriceRadio">
                     Price (lowest first)
                 </RadioButton>
                 <TextBlock Margin="0 5 0 5"
@@ -84,14 +90,16 @@
                            Foreground="White">
                  Maker
                 </TextBlock>
-                <ComboBox Margin="0 5 0 5">
+                <ComboBox Margin="0 5 0 5"
+                          x:Name="MakerComboBox">
                     
                 </ComboBox>
                 <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Brand
                 </TextBlock>
-                <ComboBox Margin="0 5 0 5">
+                <ComboBox Margin="0 5 0 5"
+                          x:Name="BrandComboBox">
 
                 </ComboBox>
                 <TextBlock Margin="0 5 0 5"
@@ -152,7 +160,8 @@
                 </StackPanel>
                 <Button Height="40"
                         Margin="0 20 0 20"
-                        Background="RoyalBlue">
+                        Background="RoyalBlue"
+                        x:Name="SearchButton">
                     <WrapPanel>
                         <TextBlock Foreground="White">
                             Search
@@ -168,7 +177,8 @@
                    Background="#444"
                    >
             <WrapPanel x:Name="ContentOffer"
-                       Margin="10">
+                       Margin="10"
+                       HorizontalAlignment="Center">
             </WrapPanel>
         </ScrollViewer>
     </Grid>

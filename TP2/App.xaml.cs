@@ -66,5 +66,27 @@ namespace TP2
             "Cars",
             "Property Rentals"
         };
+
+        public List<string> Maker = new()
+        {
+            "All",
+            "Honda",
+            "Nissan",
+            "Toyota"
+        };
+
+        public List<string> Brand = new()
+        {
+            "All",
+            "Accord",
+            "Altima",
+            "Camry",
+            "Civic",
+            "Corolla",
+            "Fit",
+            "Infiniti",
+            "Leaf",
+            "Yaris"
+        };
     }
 }

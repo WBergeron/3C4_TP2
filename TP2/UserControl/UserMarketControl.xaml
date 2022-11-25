@@ -15,16 +15,24 @@
             <TextBlock x:Name="Cost"
                        Width="100"
                        HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontWeight="Bold"
                        >999999</TextBlock>
             <TextBlock x:Name="Date"
                        Width="90"
                        HorizontalAlignment="Right"
                        TextAlignment="Right"
+                       Foreground="LightGray"
                        >01-01-2021</TextBlock>
         </WrapPanel>
         <TextBlock x:Name="NameOffer"
-                   Margin="5">Placeholder name</TextBlock>
+                   Margin="5"
+                   Foreground="White"
+                   >Placeholder name</TextBlock>
         <TextBlock x:Name="Descript"
-                   Margin="5">km</TextBlock>
+                   Margin="5"
+                   Foreground="LightGray"
+                   FontStyle="Italic"
+                   >km</TextBlock>
     </StackPanel>
 </UserControl>

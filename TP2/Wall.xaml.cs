@@ -46,8 +46,8 @@ namespace TP2
             StackPanelUser.Children.Clear();
             var userSelect = (User)ComboBoxUser.SelectedItem;
             var userCurrent = App.Current.Users.Where(x => x.Value == userSelect);
-            var userProfilControl = new UserProfilControl(userCurrent);
-            StackPanelUser.Children.Add(userProfilControl);
+            //var userProfilControl = new UserProfilControl(userCurrent);
+            //StackPanelUser.Children.Add(userProfilControl);
         }
     }
 }

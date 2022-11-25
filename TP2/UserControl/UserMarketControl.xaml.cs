@@ -30,7 +30,7 @@ namespace TP2
             InitializeComponent();
 
             OfferImage.Source = offre.ImageOffer;
-            Cost.Text = offre.Price.ToString();
+            Cost.Text = offre.Price.ToString() + '$';
             Date.Text = offre.DateDeMiseEnVente.ToShortDateString();
             NameOffer.Text = offre.Titre;
             Descript.Text = offre.Description;
