@@ -33,11 +33,11 @@ namespace TP2
         };
         public Dictionary<int, Friend> Friends = new()
         {
-            { 0, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[1] } },
-            { 1, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[2]} },
-            { 2, new Friend() { UserSend = Current.Users[0], UserReceived = Current.Users[3]} },
-            { 3, new Friend() { UserSend = Current.Users[1], UserReceived = Current.Users[2]} },
-            { 4, new Friend() { UserSend = Current.Users[2], UserReceived = Current.Users[3]} },
+            { 0, new Friend() { IdSend = 0, IdReceived = 1} },
+            { 1, new Friend() { IdSend = 0, IdReceived = 2} },
+            { 2, new Friend() { IdSend = 0, IdReceived = 3} },
+            { 3, new Friend() { IdSend = 1, IdReceived = 2} },
+            { 4, new Friend() { IdSend = 2, IdReceived = 3} },
         };
     }
 }

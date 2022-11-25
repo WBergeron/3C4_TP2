@@ -31,9 +31,13 @@ namespace TP2
             ProfilImage.ImageSource = user.Profil;
             UserName.Text = user.Name + " " + user.LastName;
 
-            foreach (var friend in user.Friends)
+            foreach (var friend in App.Current.Friends)
             {
-
+                if (user == friend.Value.UserSend)
+                {
+                    UserFriendsListBox.Items.Add(friend.Value.UserReceived);
+                }
+                
             }
         }
     }

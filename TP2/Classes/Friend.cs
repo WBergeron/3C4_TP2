@@ -8,11 +8,13 @@ namespace TP2.Classes
 {
     public class Friend
     {
-        public User UserSend { get; set; }
-        public User UserReceived { get; set; }
+        public int IdSend { get; set; }
+        public int IdReceived { get; set; }
         public int FriendRequestResponse { get; set; }
         public int FriendRequestPending { get; set; }
 
+        public User? UserSend => App.Current.Users.Values.FirstOrDefault(x => x.Id == IdSend);
+        public User? UserReceived => App.Current.Users.Values.FirstOrDefault(x => x.Id == IdReceived);
 
         public List<Friend> FriendListOrderOldToNew = new();
 
