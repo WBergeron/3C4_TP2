@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -20,9 +21,20 @@ namespace TP2
     /// </summary>
     public partial class UserPostControl : UserControl
     {
-        public UserPostControl()
+        public UserPostControl(User user)
         {
             InitializeComponent();
+            ProfilImage.ImageSource = user.Profil;
+            UserName.Text = user.Name + " " + user.LastName;
+            LikeImage.ImageSource = App.Current.stickers[1].StickerImage;
+            LoveImage.ImageSource = App.Current.stickers[2].StickerImage;
+            SadImage.ImageSource = App.Current.stickers[3].StickerImage;
+            AngryImage.ImageSource = App.Current.stickers[0].StickerImage;
+
+            foreach (var post in App.Current.Posts.Values)
+            {
+                PostImage.Source = post.PostImage;
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace TP2.Classes
 {
-    internal class Sticker : Comment
+    public class Sticker : Comment
     {
         public string SourceSticker { get; set; }
 

@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace TP2.Classes
 {
-    internal class Comment
+    public class Comment
     {
         public int Id { get; set; }
         public int PostId { get; set; }
