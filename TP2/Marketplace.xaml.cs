@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TP2.Classes;
 
 namespace TP2
 {
@@ -31,17 +30,18 @@ namespace TP2
         {
             // Initialisation
             InitializeComponent();
-            InitializeComboBox();
-
             var radioButtonSelected = RadioButtonIsTrue();
+            InitializeComboBox();
+            AffichageWrapPanelContent(radioButtonSelected);
 
             // Event de recherche
-            if (SearchButton.IsPressed)
-            {
-                radioButtonSelected = RadioButtonIsTrue();
+            SearchButton.Click += SearchButton_Click;
+            
+        }
 
-
-            }
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            var radioButtonSelected = RadioButtonIsTrue();
             AffichageWrapPanelContent(radioButtonSelected);
         }
 
@@ -60,31 +60,34 @@ namespace TP2
 
         private void AffichageWrapPanelContent(SortBy radioButtonSelected)
         {
+            var triOffer = App.Current.Offers.Values.OrderBy(x => x.Id);
             ContentOffer.Children.Clear();
-            switch (Category.SelectedIndex)
+            switch (ComboBoxCategory.SelectedValue)
             {
-                case 0:
+                case "Appliances":
                     break;
-                case 1:
-                    foreach (var item in App.Current.Offers)
+                case "Cars":
+                    if (radioButtonSelected == SortBy.Date)
                     {
-                        if (radioButtonSelected == SortBy.Date)
-                        {
-                            
-                        }
-                        if (radioButtonSelected == SortBy.Price)
-                        {
-                            
-                        }
-                        if (radioButtonSelected == SortBy.None)
-                        {
-                            
-                        }
-                        var offerUserControl = new UserMarketControl(item.Value);
+                        triOffer = triOffer.OrderBy(x => x.DateDeMiseEnVente);
+                    }
+                    if (radioButtonSelected == SortBy.Price)
+                    {
+                        triOffer = triOffer.OrderBy(x => x.Price);
+                    }
+                    if (!(minPrice.Text == "" || maxPrice.Text == ""))
+                    {
+                        
+                    }
+                    
+
+                    foreach (var item in triOffer)
+                    {
+                        var offerUserControl = new UserMarketControl(item);
                         ContentOffer.Children.Add(offerUserControl);
                     }
                     break;
-                case 2:
+                case "Property Rentals":
                     break;
                 default:
                     break;
@@ -94,12 +97,12 @@ namespace TP2
         private void InitializeComboBox()
         {
             // Category ComboBox
-            Category.Items.Clear();
+            ComboBoxCategory.Items.Clear();
             foreach (var item in App.Current.Category)
             {
-                Category.Items.Add(item);
+                ComboBoxCategory.Items.Add(item);
             }
-            Category.SelectedIndex = 1;
+            ComboBoxCategory.SelectedIndex = 1;
 
             // Maker ComboBox
             MakerComboBox.Items.Clear();
