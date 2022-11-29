@@ -32,8 +32,8 @@ namespace TP2.Classes
         public int IdUserPost { get; set; }
         public DateTime DateTime { get; set; }
         public string SourcePost { get; set; }
+        public User? UserPost => App.Current.Users.Values.FirstOrDefault(x => x.Id == IdUserPost);
 
-        
         public Access GiveAccess { get; set; }
         public List<int> IdUserAccess { get; set; }
 
