@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -60,7 +61,7 @@ namespace TP2
 
         private void AffichageWrapPanelContent(SortBy radioButtonSelected)
         {
-            var triOffer = App.Current.Offers.Values.OrderBy(x => x.Id);
+            IEnumerable<Offer> triOffer = App.Current.Offers.Values;
             ContentOffer.Children.Clear();
             switch (ComboBoxCategory.SelectedValue)
             {
@@ -69,15 +70,33 @@ namespace TP2
                 case "Cars":
                     if (radioButtonSelected == SortBy.Date)
                     {
-                        triOffer = triOffer.OrderBy(x => x.DateDeMiseEnVente);
+                        if (int.TryParse(minPrice.Text, out int intMinPrice) && int.TryParse(minPrice.Text, out int intMaxPrice))
+                        {
+                            triOffer = triOffer
+                                .OrderBy(x => x.DateDeMiseEnVente)
+                                .Where(x => (x.Price >= intMinPrice) && (x.Price <= intMaxPrice));
+                        }
+                        else
+                        {
+                            triOffer = triOffer
+                                .OrderBy(x => x.DateDeMiseEnVente)
+                                .Where(x => (x.Price >= 0) && (x.Price <= 999999));
+                        }
                     }
                     if (radioButtonSelected == SortBy.Price)
                     {
-                        triOffer = triOffer.OrderBy(x => x.Price);
-                    }
-                    if (!(minPrice.Text == "" || maxPrice.Text == ""))
-                    {
-                        
+                        if (int.TryParse(minPrice.Text, out int intMinPrice) && int.TryParse(minPrice.Text, out int intMaxPrice))
+                        {
+                            triOffer = triOffer
+                                .OrderBy(x => x.Price)
+                                .Where(x => (x.Price >= intMinPrice) && (x.Price <= intMaxPrice));
+                        }
+                        else
+                        {
+                            triOffer = triOffer
+                                .OrderBy(x => x.Price)
+                                .Where(x => (x.Price >= 0) && (x.Price <= 999999));
+                        }
                     }
                     
 
@@ -92,6 +111,7 @@ namespace TP2
                 default:
                     break;
             }
+            
         }
 
         private void InitializeComboBox()

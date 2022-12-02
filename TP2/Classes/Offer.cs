@@ -13,9 +13,10 @@ namespace TP2.Classes
         public int UserId { get; set; }
         public string Titre { get; set; }
         public string Description { get; set; }
-        public float Price { get; set; }
+        public int Price { get; set; }
         public DateTime DateDeMiseEnVente { get; set; }
         public string Source { get; set; }
         public BitmapImage ImageOffer => new BitmapImage(App.GetUri(Source));
+
     }
 }
