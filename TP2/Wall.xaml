@@ -56,9 +56,9 @@
                 </RadioButton>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="1"
-                    Grid.Column="1"
-                    Background="Gray">
-        </StackPanel>
+        <ScrollViewer Grid.Row="1"
+                      Grid.Column="1">
+            <StackPanel x:Name="StackPanelPost" Background="Gray"/>
+        </ScrollViewer>
     </Grid>
 </Window>

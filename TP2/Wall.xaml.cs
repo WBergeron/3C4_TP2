@@ -27,6 +27,7 @@ namespace TP2
             InitializeComboBox();
             ComboBoxUser.SelectedIndex = 0;
             UserChanged();
+            PostChanged();
         }
         public void InitializeComboBox()
         {
@@ -46,8 +47,16 @@ namespace TP2
             StackPanelUser.Children.Clear();
             var userSelect = (User)ComboBoxUser.SelectedItem;
             var userCurrent = App.Current.Users.Where(x => x.Value == userSelect).First().Value;
-            var userProfilControl = new UserProfilControl(userCurrent);
             StackPanelUser.Children.Add(new UserProfilControl(userCurrent));
+        }
+        private void PostChanged()
+        {
+            StackPanelPost.Children.Clear();
+            foreach(var post in App.Current.Posts.Values)
+            {
+              StackPanelPost.Children.Add(new UserPostControl(post, (User)ComboBoxUser.SelectedItem));
+            }
+
         }
     }
 }
