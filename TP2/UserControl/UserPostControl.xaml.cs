@@ -21,21 +21,24 @@ namespace TP2
     /// </summary>
     public partial class UserPostControl : UserControl
     {
+        public Post Post { get; set; }
+        public User UserCurrent { get; set; }
         public UserPostControl(Post post, User userSelected)
         {
-            User userCurrent = userSelected;
+            Post = post;
+            UserCurrent = userSelected;
             InitializeComponent();
-            ProfilImage.ImageSource = post.UserPost.Profil;
-            UserName.Text = post.UserPost.Name + " " + post.UserPost.LastName;
+            ProfilImage.ImageSource = Post.UserPost.Profil;
+            UserName.Text = Post.UserPost.Name + " " + Post.UserPost.LastName;
             LikeImage.ImageSource = App.Current.stickers[1].StickerImage;
             LoveImage.ImageSource = App.Current.stickers[2].StickerImage;
             SadImage.ImageSource = App.Current.stickers[3].StickerImage;
             AngryImage.ImageSource = App.Current.stickers[0].StickerImage;
-            PostImage.Source = post.PostImage;
-            TitleText.Text = post.Title;
-            DateText.Text = post.DateTime.ToString();
-            Description.Text = post.Description;
-            foreach (var reaction in post.Reactions)
+            PostImage.Source = Post.PostImage;
+            TitleText.Text = Post.Title;
+            DateText.Text = Post.DateTime.ToString();
+            Description.Text = Post.Description;
+            foreach (var reaction in Post.Reactions)
             {
               if(reaction.Key == userSelected.Id)
               {
@@ -43,59 +46,59 @@ namespace TP2
               }
             }
             
-            void UpdateReaction(Post.Reaction reaction, int selection)
+        }
+        private void UpdateReaction(Post.Reaction reaction, int selection)
+        {
+            if (selection == 0)
             {
-                if (selection == 0)
+                switch (reaction)
                 {
-                    switch (reaction)
-                    {
-                        case Post.Reaction.Like:
-                            ButtonLike.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbLike.Text = post.NbLike.ToString();
-                            break;
-                        case Post.Reaction.Love:
-                            ButtonLove.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbLove.Text = post.NbLove.ToString();
-                            break;
-                        case Post.Reaction.Sad:
-                            ButtonSad.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbSad.Text = post.NbSad.ToString();
-                            break;
-                        case Post.Reaction.Angry:
-                            ButtonAngry.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbAngry.Text = post.NbAngry.ToString();
-                            break;
-                        default:
-                            break;
-                    }
+                    case Post.Reaction.Like:
+                        ButtonLike.Background = new SolidColorBrush(Colors.LightBlue);
+                        NbLike.Text = Post.NbLike.ToString();
+                        break;
+                    case Post.Reaction.Love:
+                        ButtonLove.Background = new SolidColorBrush(Colors.LightBlue);
+                        NbLove.Text = Post.NbLove.ToString();
+                        break;
+                    case Post.Reaction.Sad:
+                        ButtonSad.Background = new SolidColorBrush(Colors.LightBlue);
+                        NbSad.Text = Post.NbSad.ToString();
+                        break;
+                    case Post.Reaction.Angry:
+                        ButtonAngry.Background = new SolidColorBrush(Colors.LightBlue);
+                        NbAngry.Text = Post.NbAngry.ToString();
+                        break;
+                    default:
+                        break;
                 }
-                if (selection == 1)
-                {
-                    switch (reaction)
-                    {
-                        case Post.Reaction.Like:
-                            ButtonLike.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbLike.Text = post.NbLike.ToString();
-                            break;
-                        case Post.Reaction.Love:
-                            ButtonLove.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbLove.Text = post.NbLove.ToString();
-                            break;
-                        case Post.Reaction.Sad:
-                            ButtonSad.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbSad.Text = post.NbSad.ToString();
-                            break;
-                        case Post.Reaction.Angry:
-                            ButtonAngry.Background = new SolidColorBrush(Colors.LightBlue);
-                            NbAngry.Text = post.NbAngry.ToString();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-
             }
+            if (selection == 1)
+            {
+                switch (reaction)
+                {
+                    case Post.Reaction.Like:
+                        ButtonLike.Background = new SolidColorBrush(Colors.Gray);
+                        NbLike.Text = Post.NbLike.ToString();
+                        break;
+                    case Post.Reaction.Love:
+                        ButtonLove.Background = new SolidColorBrush(Colors.Gray);
+                        NbLove.Text = Post.NbLove.ToString();
+                        break;
+                    case Post.Reaction.Sad:
+                        ButtonSad.Background = new SolidColorBrush(Colors.Gray);
+                        NbSad.Text = Post.NbSad.ToString();
+                        break;
+                    case Post.Reaction.Angry:
+                        ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
+                        NbAngry.Text = Post.NbAngry.ToString();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -103,6 +106,9 @@ namespace TP2
             switch (source.Name)
             {
                 case "ButtonLike":
+                    if(Post.Reactions.Contains(UserCurrent.Id, Post.Reaction.Like))
+                    Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Like);
+                    UpdateReaction(Post.Reaction.Like, 0);
                     break;
                 case "ButtonLove":
                     break;
