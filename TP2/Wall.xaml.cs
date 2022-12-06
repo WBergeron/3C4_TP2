@@ -26,17 +26,25 @@ namespace TP2
             RadioButtonDate.IsChecked = true;
             InitializeComboBox();
             ComboBoxUser.SelectedIndex = 0;
+            ComboBoxPost.SelectedIndex = 0;
             UserChanged();
             PostChanged();
         }
         public void InitializeComboBox()
         {
             ComboBoxUser.Items.Clear();
-
+            ComboBoxPost.Items.Clear();
             foreach (var user in App.Current.Users)
             {
                 ComboBoxUser.Items.Add(user.Value);
             }
+            ComboBoxPost.Items.Add("All users");
+            ComboBoxPost.Items.Add("Friends");
+            foreach (var user in App.Current.Users)
+            {
+                ComboBoxPost.Items.Add(user.Value);
+            }
+
         }
         private void ComboBoxUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -57,6 +65,18 @@ namespace TP2
               StackPanelPost.Children.Add(new UserPostControl(post, (User)ComboBoxUser.SelectedItem));
             }
 
+        }
+
+        private void RadioButtonDate_Checked(object sender, RoutedEventArgs e)
+        {
+           App.Current.Posts.OrderBy(x => x.Value.DateTime);
+           PostChanged();
+        }
+
+        private void RadioButtonPopularity_Checked(object sender, RoutedEventArgs e)
+        {
+            App.Current.Posts.OrderBy(x => x.Value.DateTime);
+            PostChanged();
         }
     }
 }

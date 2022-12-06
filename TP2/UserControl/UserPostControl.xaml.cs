@@ -34,70 +34,62 @@ namespace TP2
             LoveImage.ImageSource = App.Current.stickers[2].StickerImage;
             SadImage.ImageSource = App.Current.stickers[3].StickerImage;
             AngryImage.ImageSource = App.Current.stickers[0].StickerImage;
+            Day.Text = (DateTime.Now - Post.DateTime).Days.ToString() + "d";
             PostImage.Source = Post.PostImage;
             TitleText.Text = Post.Title;
-            DateText.Text = Post.DateTime.ToString();
+            DateText.Text = Post.DateTime.ToString("MMMM") + " " + Post.DateTime.Day.ToString() + " at " + Post.DateTime.ToString("hh:mm");
             Description.Text = Post.Description;
-            foreach (var reaction in Post.Reactions)
-            {
-              if(reaction.Key == userSelected.Id)
-              {
-                UpdateReaction(reaction.Value, 0);    
-              }
-            }
-            
+            ButtonLike.Background = new SolidColorBrush(Colors.Gray);
+            ButtonLove.Background = new SolidColorBrush(Colors.Gray);
+            ButtonSad.Background = new SolidColorBrush(Colors.Gray);
+            ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
+            UpdateReaction();    
         }
-        private void UpdateReaction(Post.Reaction reaction, int selection)
+        private void UpdateReaction()
         {
-            if (selection == 0)
+            NbLike.Text = Post.NbLike.ToString();
+            NbLove.Text = Post.NbLove.ToString();
+            NbSad.Text = Post.NbSad.ToString();
+            NbAngry.Text = Post.NbAngry.ToString();
+            if (Post.Reactions.ContainsKey(UserCurrent.Id))
             {
-                switch (reaction)
+                switch (Post.Reactions[UserCurrent.Id])
                 {
                     case Post.Reaction.Like:
                         ButtonLike.Background = new SolidColorBrush(Colors.LightBlue);
-                        NbLike.Text = Post.NbLike.ToString();
+                        ButtonLove.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonSad.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
                         break;
                     case Post.Reaction.Love:
                         ButtonLove.Background = new SolidColorBrush(Colors.LightBlue);
-                        NbLove.Text = Post.NbLove.ToString();
+                        ButtonLike.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonSad.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
                         break;
                     case Post.Reaction.Sad:
                         ButtonSad.Background = new SolidColorBrush(Colors.LightBlue);
-                        NbSad.Text = Post.NbSad.ToString();
+                        ButtonLike.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonLove.Background = new SolidColorBrush(Colors.Gray);
+                        ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
                         break;
                     case Post.Reaction.Angry:
                         ButtonAngry.Background = new SolidColorBrush(Colors.LightBlue);
-                        NbAngry.Text = Post.NbAngry.ToString();
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (selection == 1)
-            {
-                switch (reaction)
-                {
-                    case Post.Reaction.Like:
                         ButtonLike.Background = new SolidColorBrush(Colors.Gray);
-                        NbLike.Text = Post.NbLike.ToString();
-                        break;
-                    case Post.Reaction.Love:
                         ButtonLove.Background = new SolidColorBrush(Colors.Gray);
-                        NbLove.Text = Post.NbLove.ToString();
-                        break;
-                    case Post.Reaction.Sad:
                         ButtonSad.Background = new SolidColorBrush(Colors.Gray);
-                        NbSad.Text = Post.NbSad.ToString();
-                        break;
-                    case Post.Reaction.Angry:
-                        ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
-                        NbAngry.Text = Post.NbAngry.ToString();
                         break;
                     default:
                         break;
                 }
             }
-
+            else
+            {
+                ButtonLike.Background = new SolidColorBrush(Colors.Gray);
+                ButtonLove.Background = new SolidColorBrush(Colors.Gray);
+                ButtonSad.Background = new SolidColorBrush(Colors.Gray);
+                ButtonAngry.Background = new SolidColorBrush(Colors.Gray);
+            }
 
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -106,19 +98,63 @@ namespace TP2
             switch (source.Name)
             {
                 case "ButtonLike":
-                    if(Post.Reactions.Contains(UserCurrent.Id, Post.Reaction.Like))
-                    Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Like);
-                    UpdateReaction(Post.Reaction.Like, 0);
+                    if(Post.Reactions.ContainsKey(UserCurrent.Id))
+                    {
+                        if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Like)
+                        {
+                            Post.Reactions.Remove(UserCurrent.Id);
+
+                        }
+                    }
+                    else
+                    {
+                        Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Like);
+                    }
                     break;
                 case "ButtonLove":
+                    if (Post.Reactions.ContainsKey(UserCurrent.Id))
+                    {
+                        if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Love)
+                        {
+                            Post.Reactions.Remove(UserCurrent.Id);
+                        }
+                    }
+                    else
+                    {
+                        Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Love);
+                    }
+
                     break;
                 case "ButtonSad":
+                    if (Post.Reactions.ContainsKey(UserCurrent.Id))
+                    {
+                        if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Sad)
+                        {
+                            Post.Reactions.Remove(UserCurrent.Id);
+                        }
+                    }
+                    else
+                    {
+                        Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Sad);
+                    }
                     break;
                 case "ButtonAngry":
+                    if (Post.Reactions.ContainsKey(UserCurrent.Id))
+                    {
+                        if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Angry)
+                        {
+                            Post.Reactions.Remove(UserCurrent.Id);
+                        }
+                    }
+                    else
+                    {
+                        Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Angry);
+                    }
                     break;
                 default:
                     break;
             }
+            UpdateReaction();
         }
     }
 }

@@ -47,10 +47,12 @@
                 </TextBlock>
                 <RadioButton x:Name="RadioButtonDate" 
                              Foreground="White"
+                             Checked="RadioButtonDate_Checked"
                              Margin="0, 0, 0, 8">
                     Date (newest first)
                 </RadioButton>
-                <RadioButton x:Name="RadioButtonPopularity" 
+                <RadioButton x:Name="RadioButtonPopularity"
+                             Checked="RadioButtonPopularity_Checked"
                              Foreground="White">
                     Popularity (highest first)
                 </RadioButton>

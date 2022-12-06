@@ -25,10 +25,10 @@ namespace TP2.Classes
             Sad,
             Angry
         }
-        public int NbLike { get; set; }
-        public int NbLove { get; set; }
-        public int NbSad { get; set; }
-        public int NbAngry { get; set; }
+        
+        
+
+
         public string Title { get; set; }
         public string Description { get; set; }
         public int Id { get; set; }
@@ -43,6 +43,11 @@ namespace TP2.Classes
         public List<int> IdUserAccess = new();
 
         public Dictionary<int, Reaction> Reactions = new();
+
+        public int NbLike => Reactions.Values.Where(x => x == Reaction.Like).Count();
+        public int NbLove => Reactions.Values.Where(x => x == Reaction.Love).Count();
+        public int NbSad => Reactions.Values.Where(x => x == Reaction.Sad).Count();
+        public int NbAngry => Reactions.Values.Where(x => x == Reaction.Angry).Count();
 
         public BitmapImage PostImage => new BitmapImage(App.GetUri(SourcePost));
 
