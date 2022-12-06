@@ -61,8 +61,24 @@ namespace TP2
 
         private void AffichageWrapPanelContent(SortBy radioButtonSelected)
         {
-            IEnumerable<Offer> triOffer = App.Current.Offers.Values;
+            IEnumerable<Car> triOffer = App.Current.Offers.Values.OfType<Car>();
             ContentOffer.Children.Clear();
+            int prixMin = 0;
+            int prixMax = 999999;
+
+            // Tri si des prix min ou max on été entrer
+            if ((minPrice.Text != "") || (maxPrice.Text != ""))
+            {
+                if (int.TryParse(minPrice.Text, out int intMinPrice))
+                {
+                    prixMin = intMinPrice;
+                }
+                if (int.TryParse(maxPrice.Text, out int intMaxPrice))
+                {
+                    prixMax = intMaxPrice;
+                }
+            }
+
             switch (ComboBoxCategory.SelectedValue)
             {
                 case "Appliances":
@@ -70,35 +86,26 @@ namespace TP2
                 case "Cars":
                     if (radioButtonSelected == SortBy.Date)
                     {
-                        if (int.TryParse(minPrice.Text, out int intMinPrice) && int.TryParse(minPrice.Text, out int intMaxPrice))
-                        {
-                            triOffer = triOffer
-                                .OrderBy(x => x.DateDeMiseEnVente)
-                                .Where(x => (x.Price >= intMinPrice) && (x.Price <= intMaxPrice));
-                        }
-                        else
-                        {
-                            triOffer = triOffer
-                                .OrderBy(x => x.DateDeMiseEnVente)
-                                .Where(x => (x.Price >= 0) && (x.Price <= 999999));
-                        }
+                        triOffer = triOffer
+                            .OrderByDescending(x => x.DateDeMiseEnVente)
+                            .Where(x => x.Price >= prixMin && x.Price <= prixMax);
                     }
                     if (radioButtonSelected == SortBy.Price)
                     {
-                        if (int.TryParse(minPrice.Text, out int intMinPrice) && int.TryParse(minPrice.Text, out int intMaxPrice))
-                        {
-                            triOffer = triOffer
-                                .OrderBy(x => x.Price)
-                                .Where(x => (x.Price >= intMinPrice) && (x.Price <= intMaxPrice));
-                        }
-                        else
-                        {
-                            triOffer = triOffer
-                                .OrderBy(x => x.Price)
-                                .Where(x => (x.Price >= 0) && (x.Price <= 999999));
-                        }
+                        triOffer = triOffer
+                            .OrderBy(x => x.Price)
+                            .Where(x => x.Price >= prixMin && x.Price <= prixMax);
                     }
-                    
+
+                    if (!((string)MakerComboBox.SelectedValue == "All"))
+                    {
+                        triOffer = triOffer.Where(x => x.Marque == (string)MakerComboBox.SelectedValue);
+                    }
+
+                    if (!((string)BrandComboBox.SelectedValue == "All"))
+                    {
+                        triOffer = triOffer.Where(x => x.Fabriquant == (string)BrandComboBox.SelectedValue);
+                    }
 
                     foreach (var item in triOffer)
                     {
