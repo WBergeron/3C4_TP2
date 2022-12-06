@@ -37,6 +37,7 @@ namespace TP2.Classes
         public DateTime DateTime { get; set; }
         public string SourcePost { get; set; }
         public User? UserPost => App.Current.Users.Values.FirstOrDefault(x => x.Id == IdUserPost);
+        public int PopularityScore { get; set; }
 
         public Access GiveAccess { get; set; }
 

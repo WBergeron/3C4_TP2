@@ -103,6 +103,7 @@
             <TextBlock Margin="10, 0, 10, 10"
                        Foreground="White" 
                        FontSize="9"
+                       TextWrapping="Wrap"
                        x:Name="Description">
                        description
             </TextBlock>

@@ -103,12 +103,14 @@ namespace TP2
                         if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Like)
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
+                            Post.PopularityScore -= 3;
 
                         }
                     }
                     else
                     {
                         Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Like);
+                        Post.PopularityScore += 3;
                     }
                     break;
                 case "ButtonLove":
@@ -117,11 +119,13 @@ namespace TP2
                         if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Love)
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
+                            Post.PopularityScore -= 5;
                         }
                     }
                     else
                     {
                         Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Love);
+                        Post.PopularityScore += 5;
                     }
 
                     break;
@@ -131,11 +135,13 @@ namespace TP2
                         if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Sad)
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
+                            Post.PopularityScore -= 1;
                         }
                     }
                     else
                     {
                         Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Sad);
+                        Post.PopularityScore += 1;
                     }
                     break;
                 case "ButtonAngry":
@@ -144,17 +150,20 @@ namespace TP2
                         if (Post.Reactions[UserCurrent.Id] == Post.Reaction.Angry)
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
+                            Post.PopularityScore -= 1;
                         }
                     }
                     else
                     {
                         Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Angry);
+                        Post.PopularityScore += 1;
                     }
                     break;
                 default:
                     break;
             }
             UpdateReaction();
+            
         }
     }
 }

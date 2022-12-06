@@ -23,7 +23,11 @@
                        x:Name="UserName">Unknow
             </TextBlock>
         </WrapPanel>
-        <ListBox x:Name="UserFriendsListBox"/>
+        <TextBlock     Foreground="White"
+                       Margin="10,0,10, 3">Friends
+        </TextBlock>
+        <ListBox  Margin="10,0,10,10"
+                  x:Name="UserFriendsListBox"/>
     </StackPanel>
 </UserControl>
     

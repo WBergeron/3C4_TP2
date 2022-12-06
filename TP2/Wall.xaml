@@ -40,7 +40,8 @@
                     View posts of
                 </TextBlock>
                 <ComboBox Margin="0, 0, 0, 10" 
-                          x:Name="ComboBoxPost"/>
+                          x:Name="ComboBoxPost"
+                          SelectionChanged="ComboBoxPost_SelectionChanged"/>
                 <TextBlock Margin="0, 0, 0, 10"
                            Foreground="White">
                     Sort by
