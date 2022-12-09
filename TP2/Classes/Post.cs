@@ -16,7 +16,7 @@ namespace TP2.Classes
             FriendsOnly,
             FriendsExcept,
             SpecificFriends,
-            OnlyMe,
+            OnlyMe
         }
         public enum Reaction
         {
