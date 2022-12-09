@@ -12,9 +12,14 @@ namespace TP2.Classes
         public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string Source { get; set; }
-        public BitmapImage Profil => new BitmapImage(App.GetUri(Source));
-        public List<User> Friends { get; set; }
+        public string Password { get; set; }
+        public string Courriel { get; set; }
+        public string SourceProfil { get; set; }
+        public string SourceBannerProfil { get; set; }
+
+
+        public BitmapImage Profil => new BitmapImage(App.GetUri(SourceProfil));
+        public BitmapImage BannerProfil => new BitmapImage(App.GetUri(SourceBannerProfil));
         public override string ToString()
         {
             return Name + " " + LastName;
