@@ -80,11 +80,19 @@ namespace _3C4_TP2_Partie2
         {
             if (CharacterSelected != null && App.Current.Characters.ContainsKey(CharacterSelected.Id))
             {
-                App.Current.Characters.Remove(CharacterSelected.Id);
                 var result = MessageBox.Show("Voulez-vous supprimer " + CharacterSelected.Name, "Supprimer personnage", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (App.Current.Characters.Count != 0 && result == MessageBoxResult.Yes)
                 {
-                    CharacterSelected = App.Current.Characters.First().Value;
+                    App.Current.Characters.Remove(CharacterSelected.Id);
+                    if (App.Current.Characters.Count != 0)
+                    {
+                        CharacterSelected = App.Current.Characters.First().Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Il y a plus de personnage", "Supprimer personnage", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
                 }
                 CharacterChanged();
             }
