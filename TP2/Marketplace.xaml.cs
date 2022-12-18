@@ -65,6 +65,10 @@ namespace TP2
             ContentOffer.Children.Clear();
             int prixMin = 0;
             int prixMax = 999999;
+            int anneeMin = 0;
+            int anneeMax = 9999;
+            int milageMin = 0;
+            int milageMax = 9999;
 
             // Tri si des prix min ou max on été entrer
             if ((minPrice.Text != "") || (maxPrice.Text != ""))
@@ -79,6 +83,32 @@ namespace TP2
                 }
             }
 
+            // Tri si des annee min ou max on été entrer
+            if ((minAnnee.Text != "") || (maxAnnee.Text != ""))
+            {
+                if (int.TryParse(minAnnee.Text, out int intMinAnnee))
+                {
+                    anneeMin = intMinAnnee;
+                }
+                if (int.TryParse(maxAnnee.Text, out int intMaxAnnee))
+                {
+                    anneeMax = intMaxAnnee;
+                }
+            }
+
+            // Tri si des milage min ou max on été entrer
+            if ((minMileage.Text != "") || (maxMileage.Text != ""))
+            {
+                if (int.TryParse(minMileage.Text, out int intMinMilage))
+                {
+                    milageMin = intMinMilage;
+                }
+                if (int.TryParse(maxMileage.Text, out int intMaxMilage))
+                {
+                    milageMax = intMaxMilage;
+                }
+            }
+
             switch (ComboBoxCategory.SelectedValue)
             {
                 case "Appliances":
@@ -88,13 +118,17 @@ namespace TP2
                     {
                         triOffer = triOffer
                             .OrderByDescending(x => x.DateDeMiseEnVente)
-                            .Where(x => x.Price >= prixMin && x.Price <= prixMax);
+                            .Where(x => x.Price >= prixMin && x.Price <= prixMax)
+                            .Where(x => x.Annee.Year >= anneeMin && x.Annee.Year <= anneeMax)
+                            .Where(x => x.Odometre >= milageMin && x.Odometre <= milageMax);
                     }
                     if (radioButtonSelected == SortBy.Price)
                     {
                         triOffer = triOffer
                             .OrderBy(x => x.Price)
-                            .Where(x => x.Price >= prixMin && x.Price <= prixMax);
+                            .Where(x => x.Price >= prixMin && x.Price <= prixMax)
+                            .Where(x => x.Annee.Year >= anneeMin && x.Annee.Year <= anneeMax)
+                            .Where(x => x.Odometre >= milageMin && x.Odometre <= milageMax);
                     }
 
                     if (!((string)MakerComboBox.SelectedValue == "All"))

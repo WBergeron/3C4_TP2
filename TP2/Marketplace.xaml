@@ -43,132 +43,140 @@
                           Margin="0 0 0 10">
 
                 </ComboBox>
-                <TextBlock Margin="0 5 0 5"
+                
+                <!--Side Panel de Car-->
+                <StackPanel>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Sort by
-                </TextBlock>
-                <RadioButton Margin="0 5 0 5"
+                    </TextBlock>
+                    <RadioButton Margin="0 5 0 5"
                           Foreground="White"
                              IsChecked="True"
                              x:Name="DateRadio">
-                    Date (newest first)
-                </RadioButton>
-                <RadioButton Margin="0 5 0 5"
+                        Date (newest first)
+                    </RadioButton>
+                    <RadioButton Margin="0 5 0 5"
                           Foreground="white"
                              x:Name="PriceRadio">
-                    Price (lowest first)
-                </RadioButton>
-                <TextBlock Margin="0 5 0 5"
+                        Price (lowest first)
+                    </RadioButton>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Price
-                </TextBlock>
-                <StackPanel Height="25"
+                    </TextBlock>
+                    <StackPanel Height="25"
                             VerticalAlignment="Center">
-                    <Grid Height="25">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Background="#444"
+                        <Grid Height="25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="#444"
                                  Grid.Column="0"
                                  x:Name="minPrice">
-                        </TextBox>
-                        <TextBlock Grid.Column="1"
+                            </TextBox>
+                            <TextBlock Grid.Column="1"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center">
                             to
-                        </TextBlock>
-                        <TextBox Background="#444"
+                            </TextBlock>
+                            <TextBox Background="#444"
                                  Grid.Column="2"
                                  x:Name="maxPrice">
 
-                        </TextBox>
-                    </Grid>
-                </StackPanel>
-                <TextBlock Margin="0 5 0 5"
+                            </TextBox>
+                        </Grid>
+                    </StackPanel>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Maker
-                </TextBlock>
-                <ComboBox Margin="0 5 0 5"
+                    </TextBlock>
+                    <ComboBox Margin="0 5 0 5"
                           x:Name="MakerComboBox">
-                    
-                </ComboBox>
-                <TextBlock Margin="0 5 0 5"
+
+                    </ComboBox>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Brand
-                </TextBlock>
-                <ComboBox Margin="0 5 0 5"
+                    </TextBlock>
+                    <ComboBox Margin="0 5 0 5"
                           x:Name="BrandComboBox">
 
-                </ComboBox>
-                <TextBlock Margin="0 5 0 5"
+                    </ComboBox>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Year
-                </TextBlock>
-                <StackPanel Height="25"
+                    </TextBlock>
+                    <StackPanel Height="25"
                             VerticalAlignment="Center">
-                    <Grid Height="25">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Background="#444"
-                                 Grid.Column="0">
+                        <Grid Height="25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="#444"
+                                 Grid.Column="0"
+                                 x:Name ="minAnnee">
 
-                        </TextBox>
-                        <TextBlock Grid.Column="1"
+                            </TextBox>
+                            <TextBlock Grid.Column="1"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center">
                             to
-                        </TextBlock>
-                        <TextBox Background="#444"
-                                 Grid.Column="2">
+                            </TextBlock>
+                            <TextBox Background="#444"
+                                 Grid.Column="2"
+                                 x:Name ="maxAnnee">
 
-                        </TextBox>
-                    </Grid>
-                </StackPanel>
-                <TextBlock Margin="0 5 0 5"
+                            </TextBox>
+                        </Grid>
+                    </StackPanel>
+                    <TextBlock Margin="0 5 0 5"
                            Foreground="White">
                  Mileage
-                </TextBlock>
-                <StackPanel Height="25"
+                    </TextBlock>
+                    <StackPanel Height="25"
                             VerticalAlignment="Center">
-                    <Grid Height="25">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Background="#444"
-                                 Grid.Column="0">
+                        <Grid Height="25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="#444"
+                                 Grid.Column="0"
+                                 x:Name="minMileage">
 
-                        </TextBox>
-                        <TextBlock Grid.Column="1"
+                            </TextBox>
+                            <TextBlock Grid.Column="1"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center">
                             to
-                        </TextBlock>
-                        <TextBox Background="#444"
-                                 Grid.Column="2">
+                            </TextBlock>
+                            <TextBox Background="#444"
+                                 Grid.Column="2"
+                                 x:Name="maxMileage">
 
-                        </TextBox>
-                    </Grid>
-                </StackPanel>
-                <Button Height="40"
+                            </TextBox>
+                        </Grid>
+                    </StackPanel>
+                    <Button Height="40"
                         Margin="0 20 0 20"
                         Background="RoyalBlue"
                         x:Name="SearchButton">
-                    <WrapPanel>
-                        <TextBlock Foreground="White">
+                        <WrapPanel>
+                            <TextBlock Foreground="White">
                             Search
-                        </TextBlock>
-                    </WrapPanel>
-                </Button>
+                            </TextBlock>
+                        </WrapPanel>
+                    </Button>
+                </StackPanel>
             </StackPanel>
             
         </StackPanel>
