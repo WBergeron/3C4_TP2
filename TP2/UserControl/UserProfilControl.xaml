@@ -6,9 +6,28 @@
              xmlns:local="clr-namespace:TP2"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="LightBlue">
-        <Image x:Name="ProfilImage" Height="200" Width="200"/>
-        <TextBlock x:Name="UserName">999999</TextBlock>
-        <TextBlock x:Name="UserLastName">Placeholder name</TextBlock>
+    <StackPanel Background="Gray">
+        <WrapPanel Margin="10,0,10,0">
+            <Ellipse Height="50"
+                     Width="50">
+                <Ellipse.Fill>
+                    <ImageBrush  x:Name="ProfilImage" Stretch="Fill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Margin="10"
+                       FontWeight="Bold"
+                       FontSize="15"
+                       x:Name="UserName">Unknow
+            </TextBlock>
+        </WrapPanel>
+        <TextBlock     Foreground="White"
+                       Margin="10,0,10, 3">Friends
+        </TextBlock>
+        <ListBox  Margin="10,0,10,10"
+                  x:Name="UserFriendsListBox"/>
     </StackPanel>
 </UserControl>
+    
