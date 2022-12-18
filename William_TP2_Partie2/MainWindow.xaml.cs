@@ -23,8 +23,11 @@ namespace William_TP2_Partie2
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            
+        private void Button_Click_Wall(object sender, RoutedEventArgs e)
+        {
+            new MockupWindow().Show();
         }
     }
 }

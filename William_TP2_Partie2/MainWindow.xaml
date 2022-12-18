@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:William_TP2_Partie2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="400">
     <Grid>
-        <Button FontSize="60"
-                x:Name="btnOpenMockUp">
+        <Button FontSize="40"
+                Click="Button_Click_Wall">
             Ouvrir le "mockup"
         </Button>
     </Grid>
