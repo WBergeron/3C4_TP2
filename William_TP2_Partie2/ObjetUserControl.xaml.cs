@@ -18,11 +18,20 @@ namespace William_TP2_Partie2
     /// <summary>
     /// Logique d'interaction pour Objet.xaml
     /// </summary>
-    public partial class Objet : UserControl
+    public partial class ObjetUserControl : UserControl
     {
-        public Objet()
+        public ObjetUserControl()
         {
             InitializeComponent();
+        }
+
+        public ObjetUserControl(Objet objet)
+        {
+            InitializeComponent();
+
+            Image.Source = objet.ImageObjet;
+            Nom.Text = objet.Name;
+            Niveau.Text = objet.Niveau.ToString();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,22 @@ namespace William_TP2_Partie2
         public MockupWindow()
         {
             InitializeComponent();
+
+            AffichageObjet();
+
+            // Event de Bouton
+            
+        }
+
+        private void AffichageObjet()
+        {
+            IEnumerable<Objet> triObjet = App.Current.Inventaire.Values;
+
+            foreach (var item in triObjet)
+            {
+                var objetUserControl = new ObjetUserControl(item);
+                ContentObjet.Children.Add(objetUserControl);
+            }
         }
     }
 }

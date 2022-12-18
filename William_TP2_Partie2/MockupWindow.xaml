@@ -44,35 +44,35 @@
                         Background="Gray"
                         Margin="5"
                         >
-                    <Image></Image>
+                    <Image Source="/Assets/random.png"></Image>
                 </Button>
                 <Button Height="40"
                         Width="40"
                         Background="Gray"
                         Margin="5"
                         >
-                    <Image></Image>
+                    <Image Source="/Assets/epee.png"></Image>
                 </Button>
                 <Button Height="40"
                         Width="40"
                         Background="Gray"
                         Margin="5"
                         >
-                    <Image></Image>
+                    <Image Source="/Assets/armor.png"></Image>
                 </Button>
                 <Button Height="40"
                         Width="40"
                         Background="Gray"
                         Margin="5"
                         >
-                    <Image></Image>
+                    <Image Source="/Assets/pomme.png"></Image>
                 </Button>
                 <Button Height="40"
                         Width="40"
                         Background="Gray"
                         Margin="5"
                         >
-                    <Image></Image>
+                    <Image Source="/Assets/potion.png"></Image>
                 </Button>
             </WrapPanel>
             
@@ -82,7 +82,8 @@
                           >
                 <Border BorderBrush="Gray"
                           BorderThickness="2">
-                    <WrapPanel VerticalAlignment="Top">
+                    <WrapPanel VerticalAlignment="Top"
+                               x:Name="ContentObjet">
                         
                     </WrapPanel>
                 </Border>

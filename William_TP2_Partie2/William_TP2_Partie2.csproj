@@ -8,7 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Classe\" />
+    <None Remove="Assets\armor.png" />
+    <None Remove="Assets\epee.png" />
+    <None Remove="Assets\pomme.png" />
+    <None Remove="Assets\potion.png" />
+    <None Remove="Assets\random.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\armor.png" />
+    <Resource Include="Assets\epee.png" />
+    <Resource Include="Assets\pomme.png" />
+    <Resource Include="Assets\potion.png" />
+    <Resource Include="Assets\random.png" />
   </ItemGroup>
 
 </Project>
