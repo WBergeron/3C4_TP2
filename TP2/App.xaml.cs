@@ -25,22 +25,92 @@ namespace TP2
 
         public Dictionary<int, User> Users = new()
         {
-            { 0, new User() { Id = 0, Name = "Tom", LastName = "Richards", SourceProfil="/Assets/Users/user1.jpg" } },
-            { 1, new User() { Id = 1, Name = "Elliot", LastName = "Hart", SourceProfil="/Assets/Users/user2.jpg"} },
-            { 2, new User() { Id = 2, Name = "Rachel", LastName = "Chapman", SourceProfil="/Assets/Users/user3.jpg"} },
-            { 3, new User() { Id = 3, Name = "Myriam", LastName = "Leblanc", SourceProfil="/Assets/Users/user4.jpg"} },
-            { 4, new User() { Id = 4, Name = "Paul", LastName = "Burnham", SourceProfil="/Assets/Users/user5.jpg"} },
+            { 0, new User() { Id = 0, Name = "Tom", LastName = "Richards", Source="/Assets/Users/user1.jpg" } },
+            { 1, new User() { Id = 1, Name = "Elliot", LastName = "Hart", Source="/Assets/Users/user2.jpg"} },
+            { 2, new User() { Id = 2, Name = "Rachel", LastName = "Chapman", Source="/Assets/Users/user3.jpg"} },
+            { 3, new User() { Id = 3, Name = "Myriam", LastName = "Leblanc", Source="/Assets/Users/user4.jpg"} },
+            { 4, new User() { Id = 4, Name = "Paul", LastName = "Burnham", Source="/Assets/Users/user5.jpg"} },
         };
-        public Dictionary<int, Friend> Friends = new()
+
+        public Dictionary<int, Offer> Offers = new()
         {
+            { 0, new Car() { Id = 0, Titre = "2014 Honda Accord", Description = "170k km", Price = 6000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 19), Source = "/Assets/Offers/Cars/car1.jpg",
+                Fabriquant = "Accord", Marque = "Honda", Odometre = 170, Annee = new DateOnly(2014, 01, 01)} },
+            { 1, new Car() { Id = 1, Titre = "2015 Toyota Camry", Description = "200k km", Price = 5000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 19), Source = "/Assets/Offers/Cars/car2.jpg",
+                Fabriquant = "Camry", Marque = "Toyota", Odometre = 200, Annee = new DateOnly(2015, 01, 01)} },
+            { 2, new Car() { Id = 2, Titre = "2013 Nissan Leaf", Description = "210k km", Price = 8000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 21), Source = "/Assets/Offers/Cars/car3.jpg",
+                Fabriquant = "Leaf", Marque = "Nissan", Odometre = 210, Annee = new DateOnly(2013, 01, 01)} },
+            { 3, new Car() { Id = 3, Titre = "2021 Toyota Yaris", Description = "20k km", Price = 10000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 21), Source = "/Assets/Offers/Cars/car4.jpg",
+                Fabriquant = "Yaris", Marque = "Toyota", Odometre = 20, Annee = new DateOnly(2021, 01, 01)} },
+            { 4, new Car() { Id = 4, Titre = "2001 Honda Civic", Description = "350k km", Price = 1000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 23), Source = "/Assets/Offers/Cars/car5.jpg",
+                Fabriquant = "Civic", Marque = "Honda", Odometre = 350, Annee = new DateOnly(2001, 01, 01)} },
+            { 5, new Car() { Id = 5, Titre = "2011 Honda Civic", Description = "140k km", Price = 6000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 23), Source = "/Assets/Offers/Cars/car6.jpg",
+                Fabriquant = "Civic", Marque = "Honda", Odometre = 140, Annee = new DateOnly(2011, 01, 01)} },
+            { 6, new Car() { Id = 6, Titre = "2021 Toyota Camry", Description = "10k km", Price = 20000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 25), Source = "/Assets/Offers/Cars/car7.jpg",
+                Fabriquant = "Camry", Marque = "Toyota", Odometre = 10, Annee = new DateOnly(2021, 01, 01)} },
+            { 7, new Car() { Id = 7, Titre = "2015 Nissan Infiniti", Description = "150k km", Price = 7000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 25), Source = "/Assets/Offers/Cars/car8.jpg",
+                Fabriquant = "Infiniti", Marque = "Nissan", Odometre = 150, Annee = new DateOnly(2015, 01, 01)} },
+            { 8, new Car() { Id = 8, Titre = "2016 Nissan Infiniti", Description = "170k km", Price = 9000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 27), Source = "/Assets/Offers/Cars/car9.jpg",
+                Fabriquant = "Infiniti", Marque = "Nissan", Odometre = 170, Annee = new DateOnly(2016, 01, 01)} },
+            { 9, new Car() { Id = 9, Titre = "2018 Honda Accord", Description = "90k km", Price = 12000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 27), Source = "/Assets/Offers/Cars/car10.jpg",
+                Fabriquant = "Accord", Marque = "Honda", Odometre = 90, Annee = new DateOnly(2018, 01, 01)} },
+            { 10, new Car() { Id = 10, Titre = "2013 Toyota Yaris", Description = "210k km", Price = 5000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 29), Source = "/Assets/Offers/Cars/car11.jpg",
+                Fabriquant = "Yaris", Marque = "Toyota", Odometre = 210, Annee = new DateOnly(2013, 01, 01)} },
+            { 11, new Car() { Id = 11, Titre = "2000 Nissan Altima", Description = "320k km", Price = 2000,
+                DateDeMiseEnVente = new DateTime(2021, 11, 29), Source = "/Assets/Offers/Cars/car12.jpg",
+                Fabriquant = "Altima", Marque = "Nissan", Odometre = 320, Annee = new DateOnly(2000, 01, 01)} }
+        };
+
+        public List<string> Category = new()
+        {
+            "Appliances",
+            "Cars",
+            "Property Rentals"
+        };
+
+        public List<string> Maker = new()
+        {
+            "All",
+            "Honda",
+            "Nissan",
+            "Toyota"
+        };
+
+        public List<string> Brand = new()
+        {
+            "All",
+            "Accord",
+            "Altima",
+            "Camry",
+            "Civic",
+            "Corolla",
+            "Fit",
+            "Infiniti",
+            "Leaf",
+            "Yaris"
+        };
+
+            public Dictionary<int, Friend> Friends = new()
+            {
             { 0, new Friend() { IdSend = 0, IdReceived = 1} },
             { 1, new Friend() { IdSend = 0, IdReceived = 2} },
             { 2, new Friend() { IdSend = 0, IdReceived = 3} },
             { 3, new Friend() { IdSend = 1, IdReceived = 2} },
             { 4, new Friend() { IdSend = 2, IdReceived = 3} },
-        };
-        public Dictionary<int, Post> Posts = new()
-        {
+            };
+            public Dictionary<int, Post> Posts = new()
+            {
             { 0, new Post() { Id = 0, IsRead = false, IdUserPost = 0, PopularityScore = 0, SourcePost="/Assets/Posts/post1.jpg", GiveAccess= Post.Access.Public, Title= "Nice snack with a book", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id consectetur quam. Nam rutrum non dui et feugiat. Morbi a mattis leo. Phasellus efficitur nulla dignissim ipsum commodo, in maximus leo dignissim. Donec venenatis posuere justo quis pulvinar. Etiam eu neque nibh. Vivamus egestas sollicitudin dictum. Nunc tempus orci vel enim facilisis, sit amet rhoncus mi bibendum. Donec vel venenatis orci. Fusce ultricies libero id nulla dignissim, non molestie nunc placerat. Vestibulum hendrerit mi aliquet ante feugiat, a semper augue volutpat. Aenean leo est, sagittis non enim quis, aliquam vestibulum odio. Sed et suscipit orci.", DateTime = new DateTime(2021,11,20,07,00,00)} },
             { 1, new Post() { Id = 1, IsRead = false, IdUserPost = 1, PopularityScore = 3, Reactions = new() { {0, Post.Reaction.Like } }, SourcePost="/Assets/Posts/post2.jpg", GiveAccess= Post.Access.Public, Title= "Relaxing night at the beach", Description = "Aenean vehicula ligula id nisl dapibus auctor. Aliquam ornare, libero eu pulvinar aliquam, sem lorem fermentum nisl, sed convallis lacus sem ut nulla. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at rutrum dui. Ut at dolor leo. Maecenas id fringilla diam. Curabitur aliquet efficitur diam sed iaculis. Sed vulputate faucibus facilisis. Quisque tincidunt libero sit amet est dignissim, vitae egestas dui rutrum. Etiam non nisi quis elit consequat pretium non quis ante. Phasellus nec leo est. Vestibulum porttitor ac mauris sit amet tincidunt.", DateTime = new DateTime(2021,11,21,10,30,00) } },
             { 2, new Post() { Id = 2, IsRead = false, IdUserPost = 2, PopularityScore = 5, Reactions = new() { {0, Post.Reaction.Love } }, SourcePost="/Assets/Posts/post3.jpg", GiveAccess= Post.Access.Public, Title= "Trekking in the woods", Description = "Fusce tincidunt lorem mauris, id cursus nunc bibendum quis. Etiam sed malesuada arcu, ut tempus ligula. Ut quis erat non augue molestie scelerisque vel eu lectus. Sed et sapien blandit, iaculis tortor id, cursus nisl. Quisque facilisis congue iaculis. Ut bibendum, orci in posuere efficitur, augue diam posuere massa, quis ultrices augue nibh non est. Donec orci est, egestas a eros non, rutrum luctus neque. Nulla finibus erat in dictum laoreet. Nulla nec enim vitae nisl pulvinar maximus.", DateTime = new DateTime(2021,11,22,16,30,00)} },
@@ -51,15 +121,13 @@ namespace TP2
             { 7, new Post() { Id = 7, IsRead = false, IdUserPost = 0, PopularityScore = 0, SourcePost="/Assets/Posts/post8.jpg", GiveAccess= Post.Access.SpecificFriends, IdUserAccess = {2}, Title= "Internet cafe Sundays", Description = "In ullamcorper pulvinar ex eget fringilla. Ut luctus sed ante vitae posuere. Quisque quis tortor pharetra, tincidunt risus nec, tincidunt dui. Phasellus sagittis sollicitudin tellus. Morbi volutpat tristique dapibus. Ut ut felis facilisis, scelerisque sem sit amet, ultrices felis. Cras rhoncus diam ac leo mattis tristique. Sed vel vestibulum eros. Fusce at iaculis arcu, et porttitor eros.", DateTime = new DateTime(2021,11,27,11,30,00)} },
             { 8, new Post() { Id = 8, IsRead = false, IdUserPost = 1, PopularityScore = 6, Reactions = new() { {1, Post.Reaction.Like }, {2, Post.Reaction.Like } }, SourcePost="/Assets/Posts/post9.jpg", GiveAccess= Post.Access.FriendsOnly, Title= "Surprise!", Description = "Duis quis sapien ex. Nam in est eget nisi ultricies scelerisque nec vitae metus. Aenean pulvinar ut dui et rhoncus. Nam dolor ipsum, vulputate in sapien nec, pellentesque feugiat nulla. Proin aliquet tempus tincidunt. Phasellus id faucibus velit. Nullam non nisi lectus. Praesent in arcu eget urna aliquet egestas eu eget nibh. Sed bibendum eget magna id pretium.", DateTime = new DateTime(2021,11,28,14,30,00)} },
             { 9, new Post() { Id = 9, IsRead = false, IdUserPost = 1, PopularityScore = 1, Reactions = new() { {1, Post.Reaction.Sad } }, SourcePost="/Assets/Posts/post10.jpg", GiveAccess= Post.Access.OnlyMe, Title= "Secret painting", Description = "Cras sit amet dictum arcu, sit amet tempus ante. Aliquam nisi augue, pharetra nec erat vitae, aliquam fermentum arcu. Duis viverra arcu ac magna cursus bibendum. Etiam laoreet semper felis, tincidunt tristique lorem placerat vel. Nam leo nisl, tempor ut facilisis fermentum, maximus at odio. Donec et laoreet sem, non mattis sem. Sed accumsan at sem non egestas. Donec ultricies libero ultricies tellus euismod, eu sollicitudin nisl dictum. Quisque non consequat purus, sit amet dignissim justo. Ut placerat dolor vel tellus viverra, malesuada tempus ante sodales. Nullam dignissim at nulla vel volutpat. Phasellus egestas ultrices scelerisque. Integer tellus enim, convallis ut elit vel, pretium facilisis orci. Mauris fringilla velit metus, sed gravida elit blandit at.", DateTime = new DateTime(2021,11,29,17,30,00)} },
-        };
-        public Dictionary<int, Sticker> stickers = new()
-        {
+            };
+            public Dictionary<int, Sticker> stickers = new()
+            {
             { 0, new Sticker() { SourceSticker = "/Assets/Icons/angry.png"} },
             { 1, new Sticker() { SourceSticker = "/Assets/Icons/like.png"} },
             { 2, new Sticker() { SourceSticker = "/Assets/Icons/love.png"} },
             { 3, new Sticker() { SourceSticker = "/Assets/Icons/sad.png"} },
-        };
-
-
+            };
     }
 }
