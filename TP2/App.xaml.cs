@@ -14,7 +14,7 @@ namespace TP2
     /// </summary>
     public partial class App : Application
     {
-        public static new App Current { get { return Application.Current as App; } }
+        public static new App Current { get { return App.Current; } }
 
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
 

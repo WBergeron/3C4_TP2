@@ -16,7 +16,7 @@ namespace William_TP2_Partie2
     {
         public static new App Current { get { return Application.Current as App; } }
 
-        public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
+        public static readonly string ApplicationBaseUri = "pack://application:,,,/William_TP2_Partie2;component";
 
         public static Uri GetUri(string path)
         {
@@ -25,8 +25,8 @@ namespace William_TP2_Partie2
 
         public Dictionary<int, Objet> Inventaire = new()
         {
-            { 0, new Armure() { Id = 0, Name = "Plastron de cuir", Description="Armure de cuir simple", Niveau=1, classeArmure=1, partieDuCorps="Tronc", Source="/Assets/ArmureCuir.png" } },
-            { 1, new Armure() { Id = 1, Name = "Jambière de cuir", Description="Armure de cuir simple", Niveau=1, classeArmure=1, partieDuCorps="Jambes", Source="/Assets/Jambière.png" } },
+            { 0, new Armure() { Id = 0, Name = "Plastron de cuir", Description="Armure de cuir simple", Niveau=1, classeArmure=1, partieDuCorps="Tronc", Source="/Assets/plastron.png" } },
+            { 1, new Armure() { Id = 1, Name = "Jambière de cuir", Description="Armure de cuir simple", Niveau=1, classeArmure=1, partieDuCorps="Jambes", Source="/Assets/pomme.png" } },
         };
 
     }

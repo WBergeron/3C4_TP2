@@ -12,7 +12,9 @@
                    >
             <WrapPanel Margin="10 25 10 25"
                        >
-                <Image x:Name="Image"></Image>
+                <Image x:Name="Image"
+                       Height="50"
+                       Width="50"></Image>
                 <TextBlock Foreground="White"
                        FontSize="30"
                        VerticalAlignment="Center"
