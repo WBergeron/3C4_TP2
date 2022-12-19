@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP2", "TP2.csproj", "{D2112851-5BE7-4E2B-A0D9-8FB8DAA2024F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "William_TP2_Partie2", "..\William_TP2_Partie2\William_TP2_Partie2.csproj", "{4B6685D9-3248-46CF-9ACF-741324979D2A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius_TP2_Partie2", "..\Julius_TP2_Partie2\Julius_TP2_Partie2.csproj", "{F6503C01-9F41-4B5D-9D71-DBA7F6C2988F}"
 EndProject
 Global
@@ -17,6 +19,10 @@ Global
 		{D2112851-5BE7-4E2B-A0D9-8FB8DAA2024F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2112851-5BE7-4E2B-A0D9-8FB8DAA2024F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2112851-5BE7-4E2B-A0D9-8FB8DAA2024F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6685D9-3248-46CF-9ACF-741324979D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6685D9-3248-46CF-9ACF-741324979D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6685D9-3248-46CF-9ACF-741324979D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6685D9-3248-46CF-9ACF-741324979D2A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6503C01-9F41-4B5D-9D71-DBA7F6C2988F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6503C01-9F41-4B5D-9D71-DBA7F6C2988F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6503C01-9F41-4B5D-9D71-DBA7F6C2988F}.Release|Any CPU.ActiveCfg = Release|Any CPU

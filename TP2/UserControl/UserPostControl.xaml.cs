@@ -104,8 +104,18 @@ namespace TP2
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
                             Post.PopularityScore -= 3;
+                            break;
 
                         }
+                        if (Post.Reactions[UserCurrent.Id] != Post.Reaction.Like)
+                        {
+                            removePopularityScore(UserCurrent.Id);
+                            Post.Reactions.Remove(UserCurrent.Id);
+                            Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Like);
+                            Post.PopularityScore += 3;
+
+                        }
+
                     }
                     else
                     {
@@ -120,6 +130,15 @@ namespace TP2
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
                             Post.PopularityScore -= 5;
+                            break;
+                        }
+                        if (Post.Reactions[UserCurrent.Id] != Post.Reaction.Love)
+                        {
+                            removePopularityScore(UserCurrent.Id);
+                            Post.Reactions.Remove(UserCurrent.Id);
+                            Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Love);
+                            Post.PopularityScore += 5;
+
                         }
                     }
                     else
@@ -136,6 +155,15 @@ namespace TP2
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
                             Post.PopularityScore -= 1;
+                            break;
+                        }
+                        if (Post.Reactions[UserCurrent.Id] != Post.Reaction.Sad)
+                        {
+                            removePopularityScore(UserCurrent.Id);
+                            Post.Reactions.Remove(UserCurrent.Id);
+                            Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Sad);
+                            Post.PopularityScore += 1;
+
                         }
                     }
                     else
@@ -151,6 +179,15 @@ namespace TP2
                         {
                             Post.Reactions.Remove(UserCurrent.Id);
                             Post.PopularityScore -= 1;
+                            break;
+                        }
+                        if (Post.Reactions[UserCurrent.Id] != Post.Reaction.Angry)
+                        {
+                            removePopularityScore(UserCurrent.Id);
+                            Post.Reactions.Remove(UserCurrent.Id);
+                            Post.Reactions.Add(UserCurrent.Id, Post.Reaction.Angry);
+                            Post.PopularityScore += 1;
+
                         }
                     }
                     else
@@ -164,6 +201,25 @@ namespace TP2
             }
             UpdateReaction();
             
+        }
+        public void removePopularityScore(int id)
+        {
+            if (Post.Reactions[id] == Post.Reaction.Like)
+            {
+                Post.PopularityScore -= 3;
+            }
+            if (Post.Reactions[id] == Post.Reaction.Love)
+            {
+                Post.PopularityScore -= 5;
+            }
+            if (Post.Reactions[id] == Post.Reaction.Sad)
+            {
+                Post.PopularityScore -= 1;
+            }
+            if (Post.Reactions[id] == Post.Reaction.Angry)
+            {
+                Post.PopularityScore -= 1;
+            }
         }
     }
 }
