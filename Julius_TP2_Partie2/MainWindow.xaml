@@ -1,0 +1,73 @@
+﻿<Window x:Class="_3C4_TP2_Partie2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3C4_TP2_Partie2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Stretch="UniformToFill"
+               Grid.ColumnSpan="2"
+               Grid.RowSpan="2"
+               x:Name="background"/>
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Hidden">
+            <WrapPanel x:Name="WrapPanelCharacter"></WrapPanel>
+        </ScrollViewer>
+
+        <WrapPanel Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   Height="55"
+                   x:Name="StackPanelOption">
+            <Border BorderBrush="Black" 
+                   BorderThickness="1"
+                   Margin="330,10,10,10"
+                   Height="30"
+                   Width="70">
+                <Button HorizontalAlignment="Center"
+                   Width="70"
+                   x:Name="Supprimer"
+                   Click="Supprimer_Click"
+                   Background="Transparent"
+                   Foreground="Black"
+                   FontWeight="Bold">Supprimer
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" 
+                BorderThickness="1"
+                Height="30"
+                Width="100">
+                <ComboBox HorizontalAlignment="Center"
+                   Height="30"
+                   Width="100"
+                   x:Name="Filter"
+                   SelectionChanged="Filter_SelectionChanged"
+                   Background="Transparent"
+                   Foreground="Black"
+                   FontWeight="Bold">
+                    <ComboBoxItem Background="Transparent"
+                              x:Name="Level">Level
+                    </ComboBoxItem>
+                    <ComboBoxItem Background="Transparent"
+                              x:Name="Rarity">Rarity
+                    </ComboBoxItem>
+                    <ComboBoxItem Background="Transparent"
+                              x:Name="Element">Element
+                    </ComboBoxItem>
+                    <ComboBoxItem Background="Transparent"
+                              x:Name="Weapon">Weapon
+                    </ComboBoxItem>
+                </ComboBox>
+            </Border>
+        </WrapPanel>
+    </Grid>
+</Window>
