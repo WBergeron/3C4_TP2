@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace William_TP2_Partie2
 {
-    public class Objet
+    partial class Objet
     {
         public int Id;
         public string Name;
