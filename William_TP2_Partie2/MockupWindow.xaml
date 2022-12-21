@@ -43,6 +43,7 @@
                         Width="40"
                         Background="Gray"
                         Margin="5"
+                        x:Name="randomButton"
                         >
                     <Image Source="/Assets/random.jpg"></Image>
                 </Button>
@@ -50,6 +51,7 @@
                         Width="40"
                         Background="Gray"
                         Margin="5"
+                        x:Name="armeButton"
                         >
                     <Image Source="/Assets/epee.jpg"></Image>
                 </Button>
@@ -57,6 +59,7 @@
                         Width="40"
                         Background="Gray"
                         Margin="5"
+                        x:Name="armureButton"
                         >
                     <Image Source="/Assets/armor.jpg"></Image>
                 </Button>
@@ -64,6 +67,7 @@
                         Width="40"
                         Background="Gray"
                         Margin="5"
+                        x:Name="nouritureButton"
                         >
                     <Image Source="/Assets/pomme.jpg"></Image>
                 </Button>
@@ -71,6 +75,7 @@
                         Width="40"
                         Background="Gray"
                         Margin="5"
+                        x:Name="potionButton"
                         >
                     <Image Source="/Assets/potion.jpg"></Image>
                 </Button>

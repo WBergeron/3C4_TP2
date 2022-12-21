@@ -18,8 +18,11 @@ namespace William_TP2_Partie2
     /// <summary>
     /// Logique d'interaction pour Objet.xaml
     /// </summary>
+    /// 
     public partial class ObjetUserControl : UserControl
-    {
+    { 
+        public Objet CarteObjet { get; set; } 
+
         public ObjetUserControl()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace William_TP2_Partie2
 
             buttonObjet.Click += ButtonObjet_Click;
 
+            CarteObjet = objet;
             Image.Source = objet.ImageObjet;
             if (objet.Name.Length <= 18)
             {
@@ -50,10 +54,11 @@ namespace William_TP2_Partie2
 
         private void ButtonObjet_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("Voulez-vous vraiment jeter l'objet de votre inventaire?", "Delete objet", MessageBoxButton.YesNo)
+            if(MessageBox.Show("Voulez-vous vraiment jeter '" + CarteObjet.Name + "' de votre inventaire?", "Delete objet", MessageBoxButton.YesNo)
                 == MessageBoxResult.Yes)
             {
-                
+                var w = new MockupWindow();
+                w.SupprimerObjet(CarteObjet);
             }
         }
     }
