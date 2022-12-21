@@ -8,27 +8,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\armc.jpg" />
     <None Remove="Assets\armc.png" />
+    <None Remove="Assets\armor.jpg" />
     <None Remove="Assets\armor.png" />
+    <None Remove="Assets\backpack.jpg" />
     <None Remove="Assets\backpack.png" />
+    <None Remove="Assets\biscuit.jpg" />
+    <None Remove="Assets\casque.jpg" />
+    <None Remove="Assets\epee.jpg" />
     <None Remove="Assets\epee.png" />
+    <None Remove="Assets\epeeCuivre.jpg" />
+    <None Remove="Assets\hallebarde.jpg" />
+    <None Remove="Assets\Jambiere.jpg" />
     <None Remove="Assets\Jambiere.png" />
+    <None Remove="Assets\plastron.jpg" />
     <None Remove="Assets\plastron.png" />
+    <None Remove="Assets\pomme.jpg" />
     <None Remove="Assets\pomme.png" />
+    <None Remove="Assets\potion.jpg" />
     <None Remove="Assets\potion.png" />
+    <None Remove="Assets\potionpoison.jpg" />
+    <None Remove="Assets\potionsoin.jpg" />
+    <None Remove="Assets\radis.jpg" />
+    <None Remove="Assets\random.jpg" />
     <None Remove="Assets\random.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\armc.png" />
-    <Resource Include="Assets\armor.png" />
-    <Resource Include="Assets\backpack.png" />
-    <Resource Include="Assets\epee.png" />
-    <Resource Include="Assets\Jambiere.png" />
-    <Resource Include="Assets\plastron.png" />
-    <Resource Include="Assets\pomme.png" />
-    <Resource Include="Assets\potion.png" />
-    <Resource Include="Assets\random.png" />
+    <Resource Include="Assets\armc.jpg" />
+    <Resource Include="Assets\armor.jpg" />
+    <Resource Include="Assets\backpack.jpg" />
+    <Resource Include="Assets\biscuit.jpg" />
+    <Resource Include="Assets\casque.jpg" />
+    <Resource Include="Assets\epee.jpg" />
+    <Resource Include="Assets\epeeCuivre.jpg" />
+    <Resource Include="Assets\hallebarde.jpg" />
+    <Resource Include="Assets\Jambiere.jpg" />
+    <Resource Include="Assets\plastron.jpg" />
+    <Resource Include="Assets\pomme.jpg" />
+    <Resource Include="Assets\potion.jpg" />
+    <Resource Include="Assets\potionpoison.jpg" />
+    <Resource Include="Assets\potionsoin.jpg" />
+    <Resource Include="Assets\radis.jpg" />
+    <Resource Include="Assets\random.jpg" />
   </ItemGroup>
 
 </Project>

@@ -5,38 +5,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:William_TP2_Partie2"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="500">
-    <Button Background="CadetBlue">
-        <StackPanel Height="100"
+             d:DesignHeight="70" d:DesignWidth="500">
+    <Button Background="Black"
+            x:Name="buttonObjet"
+            >
+        <StackPanel Height="50"
                    Width="500"
                    >
-            <WrapPanel Margin="10 25 10 25"
+            <WrapPanel Margin="10 5 10 5"
                        >
                 <Image x:Name="Image"
-                       Height="50"
-                       Width="50"></Image>
+                       Height="30"
+                       Width="30"></Image>
                 <TextBlock Foreground="White"
-                       FontSize="30"
+                       FontSize="25"
                        VerticalAlignment="Center"
                            x:Name="Nom">
                 Nom de l'item
                 </TextBlock>
-                <StackPanel>
-                    
-                </StackPanel>
-                <TextBlock Foreground="White"
+                <WrapPanel VerticalAlignment="Center"
+                           Width="200">
+                    <TextBlock Foreground="White"
                            FontSize="20"
                            VerticalAlignment="Center"
                            Margin="20 0 0 0"
                            >
                 Lvl:
-                </TextBlock>
-                <TextBlock Foreground="White"
+                    </TextBlock>
+                    <TextBlock Foreground="White"
                            FontSize="20"
                            VerticalAlignment="Center"
                            x:Name="Niveau">
                     999
-                </TextBlock>
+                    </TextBlock>
+                </WrapPanel>
             </WrapPanel>
         </StackPanel>
     </Button>
